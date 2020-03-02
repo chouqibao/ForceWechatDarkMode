@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
+import android.os.Build;
 import android.util.Log;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
@@ -73,7 +74,6 @@ public class HookEntrance implements IXposedHookLoadPackage {
             Log.e(LOG_TAG, Log.getStackTraceString(e));
         }*/
 
-        // 非 Play 版微信需 hook 此方法
         try {
             findAndHookMethod("com.tencent.mm.ui.af", classloader, "fqj", new XC_MethodHook() {
                 protected void afterHookedMethod(MethodHookParam param) throws Throwable {
@@ -86,7 +86,6 @@ public class HookEntrance implements IXposedHookLoadPackage {
             Log.e(LOG_TAG, Log.getStackTraceString(e));
         }
 
-        // Play 版微信需 hook 此方法
         try {
             findAndHookMethod("com.tencent.mm.ui.af", classloader, "fnH", new XC_MethodHook() {
                 protected void afterHookedMethod(MethodHookParam param) throws Throwable {
@@ -96,6 +95,18 @@ public class HookEntrance implements IXposedHookLoadPackage {
             });
         } catch (Throwable e) {
             Log.e(LOG_TAG, "Hook com.tencent.mm.ui.af.fnH() error.");
+            Log.e(LOG_TAG, Log.getStackTraceString(e));
+        }
+
+        try {
+            findAndHookMethod("com.tencent.mm.ui.ah", classloader, "eCe", new XC_MethodHook() {
+                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                    Log.i(LOG_TAG, "com.tencent.mm.ui.ah.eCe() called. result: " + param.getResult());
+                    param.setResult(true);
+                }
+            });
+        } catch (Throwable e) {
+            Log.e(LOG_TAG, "hook com.tencent.mm.ui.ah.eCe() error.");
             Log.e(LOG_TAG, Log.getStackTraceString(e));
         }
 
@@ -112,6 +123,18 @@ public class HookEntrance implements IXposedHookLoadPackage {
         }
 
         try {
+            findAndHookMethod("com.tencent.mm.ui.ah", classloader, "eCg", new XC_MethodHook() {
+                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                    Log.i(LOG_TAG, "com.tencent.mm.ui.ah.eCg() called. result: " + param.getResult());
+                    param.setResult(true);
+                }
+            });
+        } catch (Throwable e) {
+            Log.e(LOG_TAG, "Hook com.tencent.mm.ui.ah.eCg() error.");
+            Log.e(LOG_TAG, Log.getStackTraceString(e));
+        }
+
+        try {
             findAndHookMethod("com.tencent.mm.ui.af", classloader, "fgw", new XC_MethodHook() {
                 protected void afterHookedMethod(MethodHookParam param) throws Throwable {
                     Log.i(LOG_TAG, "com.tencent.mm.ui.af.fgw() called, result: " + param.getResult());
@@ -120,6 +143,51 @@ public class HookEntrance implements IXposedHookLoadPackage {
             });
         } catch (Throwable e) {
             Log.e(LOG_TAG, "Hook com.tencent.mm.ui.af.fgw() error.");
+            Log.e(LOG_TAG, Log.getStackTraceString(e));
+        }
+
+        try {
+            findAndHookMethod("com.tencent.mm.ui.ah", classloader, "eCc", new XC_MethodHook() {
+                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                    Log.i(LOG_TAG, "com.tencent.mm.ui.ah.eCc() called. result: " + param.getResult());
+                    param.setResult(true);
+                }
+            });
+        } catch (Throwable e) {
+            Log.e(LOG_TAG, "Hook com.tencent.mm.ui.ah.eCc() error.");
+            Log.e(LOG_TAG, Log.getStackTraceString(e));
+        }
+
+        try {
+            findAndHookMethod("com.tencent.mm.plugin.expt.d.b", classloader, "b", String.class, String.class, boolean.class, boolean.class, new XC_MethodHook() {
+                @Override
+                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                    if (param.args[0].toString().equals("clicfg_dark_mode_brand_api")) {
+                        Log.i(LOG_TAG, "com.tencent.mm.plugin.expt.d.b.b(\"clicfg_dark_mode_brand_api\") called.");
+                        param.setResult(Build.BRAND.toLowerCase() + "&" + Build.VERSION.SDK_INT);
+                    } else if (param.args[0].toString().equals("clicfg_dark_mode_unused_on")) {
+                        Log.i(LOG_TAG, "com.tencent.mm.plugin.expt.d.b.b(\"clicfg_dark_mode_unused_on\") called.");
+                        param.setResult("1");
+                    }
+                }
+            });
+        } catch (Throwable e) {
+            Log.e(LOG_TAG, "Hook com.tencent.mm.plugin.expt.d.b.b() error.");
+            Log.e(LOG_TAG, Log.getStackTraceString(e));
+        }
+
+        try {
+            findAndHookMethod("com.tencent.mm.sdk.platformtools.az", classloader, "getBoolean", String.class, boolean.class, new XC_MethodHook() {
+                @Override
+                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                    if (param.args[0].toString().equals("dark_mode_used")) {
+                        Log.i(LOG_TAG, "com.tencent.mm.sdk.platformtools.az.getBoolean() called.");
+                        param.setResult(true);
+                    }
+                }
+            });
+        } catch (Throwable e) {
+            Log.e(LOG_TAG, "Hook com.tencent.mm.sdk.platformtools.az.getBoolean() error.");
             Log.e(LOG_TAG, Log.getStackTraceString(e));
         }
     }
