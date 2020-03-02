@@ -1,0 +1,2 @@
+rootProject.name='强制开启微信深色主题'
+include ':app'
