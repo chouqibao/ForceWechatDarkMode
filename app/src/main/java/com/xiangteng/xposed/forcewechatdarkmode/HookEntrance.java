@@ -11,6 +11,7 @@ import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
+import static de.robv.android.xposed.XposedBridge.hookAllMethods;
 import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
 
 public class HookEntrance implements IXposedHookLoadPackage {
@@ -162,10 +163,12 @@ public class HookEntrance implements IXposedHookLoadPackage {
             findAndHookMethod("com.tencent.mm.plugin.expt.d.b", classloader, "b", String.class, String.class, boolean.class, boolean.class, new XC_MethodHook() {
                 @Override
                 protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                    if (param.args[0].toString().equals("clicfg_dark_mode_brand_api")) {
+                    String para0 = param.args[0].toString();
+                    Log.d(LOG_TAG, String.format("com.tencent.mm.plugin.expt.d.b.b() called, para: %s, result: %s", para0, param.getResult().toString()));
+                    if (para0.equals("clicfg_dark_mode_brand_api")) {
                         Log.i(LOG_TAG, "com.tencent.mm.plugin.expt.d.b.b(\"clicfg_dark_mode_brand_api\") called.");
                         param.setResult(Build.BRAND.toLowerCase() + "&" + Build.VERSION.SDK_INT);
-                    } else if (param.args[0].toString().equals("clicfg_dark_mode_unused_on")) {
+                    } else if (para0.equals("clicfg_dark_mode_unused_on")) {
                         Log.i(LOG_TAG, "com.tencent.mm.plugin.expt.d.b.b(\"clicfg_dark_mode_unused_on\") called.");
                         param.setResult("1");
                     }
@@ -177,17 +180,18 @@ public class HookEntrance implements IXposedHookLoadPackage {
         }
 
         try {
-            findAndHookMethod("com.tencent.mm.sdk.platformtools.az", classloader, "getBoolean", String.class, boolean.class, new XC_MethodHook() {
+            hookAllMethods(classloader.loadClass("com.tencent.mmkv.MMKV"), "getBoolean", new XC_MethodHook() {
                 @Override
-                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                    if (param.args[0].toString().equals("dark_mode_used")) {
-                        Log.i(LOG_TAG, "com.tencent.mm.sdk.platformtools.az.getBoolean() called.");
+                protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+                    String para0 = param.args[0].toString();
+                    if (para0.equals("dark_mode_used") || para0.equals("dark_mode_follow_system")) {
+                        Log.i(LOG_TAG, "com.tencent.mmkv.MMKV.getBoolean(\"" + para0 + "\") called.");
                         param.setResult(true);
                     }
                 }
             });
         } catch (Throwable e) {
-            Log.e(LOG_TAG, "Hook com.tencent.mm.sdk.platformtools.az.getBoolean() error.");
+            Log.e(LOG_TAG, "Hook com.tencent.mmkv.MMKV.getBoolean() error.");
             Log.e(LOG_TAG, Log.getStackTraceString(e));
         }
     }
