@@ -1,27 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="toast_storage_permission_denied">读写外部存储权限被拒绝</string>
-    <string name="storagr_permission_rationale">由于 Android 系统限制，模块需要读写外部存储权限才能读写配置。</string>
-    <string name="dialog_pos_button">确定</string>
-    <string name="dialog_neg_button">取消</string>
-    <string name="toast_kill_wechat">强行停止微信并重启后生效</string>
-    <string name="msg_remind_not_stored">设置尚未保存（点击右下角悬浮按钮保存），确定退出？</string>
+    <string name="app_title">Force WeChat Dark Mode</string>
+    <string name="app_xposed_description">Force enable WeChat Dark Mode.</string>
 
-    <string name="preference_dark_mode_status_key">preference_dark_mode_status_key</string>
-    <string name="preference_dark_mode_status_title_on">系统深色主题状态：开</string>
-    <string name="preference_dark_mode_status_title_off">系统深色主题状态：关</string>
-    <string name="preference_dark_mode_status_title_unknown">系统深色主题状态：未知</string>
-    <string name="prompt_when_dark_mode_off">当前系统不支持深色主题或未打开。若为前者，可试试增强模式，还不行的话可尝试使用《深色模式切换》（可在酷安找到）等软件。</string>
+    <string name="toast_storage_permission_denied">Read/write external storage has been denied</string>
+    <string name="storage_permission_rationale">Due to Android system limitation, we need this permission to store configurations.</string>
+    <string name="toast_kill_wechat">Force-stop WeChat and restart to apply</string>
+    <string name="msg_remind_not_stored">Settings are not saved (click on the floating button at the right bottom corner to save), exit?</string>
 
-    <string name="preference_switch_enhanced_mode_key">preference_switch_enhanced_mode_key</string>
-    <string name="preference_switch_enhanced_mode_title">增强模式（试验性）</string>
-    <string name="preference_switch_enhanced_mode_summary">打开后可无视系统设置，保持微信深色主题。重启微信后生效。</string>
+    <string name="preference_dark_mode_status_key" translatable="false">preference_dark_mode_status_key</string>
+    <string name="preference_dark_mode_status_title_on">System Dark Mode: On</string>
+    <string name="preference_dark_mode_status_title_off">System Dark Mode: Off</string>
+    <string name="preference_dark_mode_status_title_unknown">System Dark Mode: Unknown</string>
+    <string name="prompt_when_dark_mode_off">Dark Mode not enabled or unsupported. Try \"Enhanced Mode\" if unsupported.</string>
 
-    <string name="preference_category_debug_title">调试信息</string>
+    <string name="preference_switch_enhanced_mode_key" translatable="false">preference_switch_enhanced_mode_key</string>
+    <string name="preference_switch_enhanced_mode_title">Enhanced Mode (Experimental)</string>
+    <string name="preference_switch_enhanced_mode_summary_on">Always apply Dark Mode, restart WeChat to take effect.</string>
+    <string name="preference_switch_enhanced_mode_summary_off">Follow system Dark Mode settings, restart WeChat to take effect.</string>
 
-    <string name="preference_switch_log_to_file_key">preference_switch_log_to_file_key</string>
-    <string name="preference_switch_log_to_file_title">记录日志到文件</string>
-    <string name="preference_switch_log_to_file_summary">仅供调试使用，没事别开。</string>
+    <string name="preference_category_debug_title">Debugging</string>
 
-    <string name="preference_clear_log_key">preference_clear_log_key</string>
-    <string name="preference_clear_log_title">清空日志</string>
+    <string name="preference_switch_log_to_file_key" translatable="false">preference_switch_log_to_file_key</string>
+    <string name="preference_switch_log_to_file_title">Write logs to file</string>
+    <string name="preference_switch_log_to_file_summary">Debug only, don\'t enable if you\'re unsure.</string>
+
+    <string name="preference_clear_log_key" translatable="false">preference_clear_log_key</string>
+    <string name="preference_clear_log_title">Clear logs</string>
 </resources>
