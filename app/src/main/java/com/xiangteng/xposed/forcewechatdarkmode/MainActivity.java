@@ -61,14 +61,14 @@ public class MainActivity extends AppCompatActivity {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
                     new AlertDialog.Builder(this)
-                            .setMessage(R.string.storagr_permission_rationale)
-                            .setPositiveButton(R.string.dialog_pos_button, new DialogInterface.OnClickListener() {
+                            .setMessage(R.string.storage_permission_rationale)
+                            .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE_ARRAY, PERMISSIONS_STORAGE_CODE);
                                 }
                             })
-                            .setNegativeButton(R.string.dialog_neg_button, new DialogInterface.OnClickListener() {
+                            .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     Toast.makeText(activity, R.string.toast_storage_permission_denied, Toast.LENGTH_LONG).show();
@@ -151,13 +151,13 @@ public class MainActivity extends AppCompatActivity {
         if (SettingsFragment.isPrefChanged) {  // 未保存就退出则给出提示
             new AlertDialog.Builder(this)
                     .setMessage(R.string.msg_remind_not_stored)
-                    .setPositiveButton(R.string.dialog_pos_button, new DialogInterface.OnClickListener() {
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             MainActivity.super.onBackPressed();
                         }
                     })
-                    .setNegativeButton(R.string.dialog_neg_button, new DialogInterface.OnClickListener() {
+                    .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                         }

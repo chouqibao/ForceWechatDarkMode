@@ -9,7 +9,8 @@
     <SwitchPreference
         android:defaultValue="false"
         android:key="@string/preference_switch_enhanced_mode_key"
-        android:summary="@string/preference_switch_enhanced_mode_summary"
+        android:summaryOn="@string/preference_switch_enhanced_mode_summary_on"
+        android:summaryOff="@string/preference_switch_enhanced_mode_summary_off"
         android:title="@string/preference_switch_enhanced_mode_title" />
 
     <PreferenceCategory android:title="@string/preference_category_debug_title">
