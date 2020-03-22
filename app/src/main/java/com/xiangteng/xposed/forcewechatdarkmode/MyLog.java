@@ -10,13 +10,13 @@ import java.util.Date;
 import de.robv.android.xposed.XposedBridge;
 
 import static com.xiangteng.xposed.forcewechatdarkmode.Constants.LOG_TAG;
+import static com.xiangteng.xposed.forcewechatdarkmode.BuildConfig.DEBUG;
 
 public class MyLog {
 
     private static final MyLog myLog = new MyLog();
     private static final int MAX_LENGTH = 3500;
     private boolean doWriteToFile = false;  // 是否写入到文件
-    private static final boolean doLogcat = false;  // 是否输出到系统日志，开发时打开，发布时关闭
 
     private MyLog() {
     }
@@ -36,7 +36,7 @@ public class MyLog {
     public void v(String tag, String message) {
         if (doWriteToFile)
             writeLog("V", tag, message);
-        if (doLogcat)
+        if (DEBUG)
             vToLogcat(tag, message);
     }
 
@@ -52,7 +52,7 @@ public class MyLog {
     public void d(String tag, String message) {
         if (doWriteToFile)
             writeLog("D", tag, message);
-        if (doLogcat)
+        if (DEBUG)
             dToLogcat(tag, message);
     }
 
@@ -68,7 +68,7 @@ public class MyLog {
     public void i(String tag, String message) {
         if (doWriteToFile)
             writeLog("I", tag, message);
-        if (doLogcat)
+        if (DEBUG)
             iToLogcat(tag, message);
     }
 
@@ -85,7 +85,7 @@ public class MyLog {
     public void w(String tag, String message) {
         if (doWriteToFile)
             writeLog("W", tag, message);
-        if (doLogcat)
+        if (DEBUG)
             wToLogcat(tag, message);
     }
 
@@ -101,7 +101,7 @@ public class MyLog {
     public void e(String tag, String message) {
         if (doWriteToFile)
             writeLog("E", tag, message);
-        if (doLogcat) {
+        if (DEBUG) {
             eToLogcat(tag, message);
             XposedBridge.log(tag + ": " + message);
         }
@@ -121,7 +121,7 @@ public class MyLog {
             writeLog("E", tag, message);
             writeLog("E", tag, Log.getStackTraceString(t));
         }
-        if (doLogcat) {
+        if (DEBUG) {
             eToLogcat(tag, message);
             eToLogcat(tag, Log.getStackTraceString(t));
             XposedBridge.log(tag + ": " + message);
