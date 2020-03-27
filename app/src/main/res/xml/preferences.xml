@@ -1,27 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Preference
-        android:key="@string/preference_dark_mode_status_key"
-        android:selectable="false"
-        android:title="@string/preference_dark_mode_status_title_unknown" />
+    <PreferenceCategory android:title="@string/preference_category_xposed_framework_title">
+        <Preference
+            android:key="preference_xposed_version_key"
+            android:selectable="false"
+            android:title="@string/preference_xposed_version_title_inactive" />
+    </PreferenceCategory>
 
-    <SwitchPreference
-        android:defaultValue="false"
-        android:key="@string/preference_switch_enhanced_mode_key"
-        android:summaryOn="@string/preference_switch_enhanced_mode_summary_on"
-        android:summaryOff="@string/preference_switch_enhanced_mode_summary_off"
-        android:title="@string/preference_switch_enhanced_mode_title" />
+    <PreferenceCategory android:title="@string/preference_category_dark_mode_title">
+        <Preference
+            android:key="preference_dark_mode_status_key"
+            android:selectable="false"
+            android:title="@string/preference_dark_mode_status_title_unknown" />
 
-    <PreferenceCategory android:title="@string/preference_category_debug_title">
         <SwitchPreference
             android:defaultValue="false"
-            android:key="@string/preference_switch_log_to_file_key"
-            android:summary="@string/preference_switch_log_to_file_summary"
-            android:title="@string/preference_switch_log_to_file_title" />
-        <Preference
-            android:key="@string/preference_clear_log_key"
-            android:title="@string/preference_clear_log_title" />
+            android:key="preference_enhanced_mode_key"
+            android:summaryOff="@string/preference_switch_enhanced_mode_summary_off"
+            android:summaryOn="@string/preference_switch_enhanced_mode_summary_on"
+            android:title="@string/preference_switch_enhanced_mode_title" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="preference_hide_launcher_icon_key"
+            android:summaryOff="@string/preference_hide_launcher_icon_summary_off"
+            android:summaryOn="@string/preference_hide_launcher_icon_summary_on"
+            android:title="@string/preference_hide_launcher_icon_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preference_category_debug_title">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="preference_verbose_logging_key"
+            android:summary="@string/preference_verbose_logging_summary"
+            android:title="@string/preference_verbose_logging_title" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="preference_write_xposed_log_key"
+            android:summaryOff="@string/preference_write_xposed_log_summary_off"
+            android:summaryOn="@string/preference_write_xposed_log_summary_on"
+            android:title="@string/preference_write_xposed_log_title" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

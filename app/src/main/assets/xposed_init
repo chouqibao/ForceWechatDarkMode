@@ -1,1 +1,2 @@
-com.xiangteng.xposed.forcewechatdarkmode.HookEntrance
+com.xiangteng.xposed.forcewechatdarkmode.HookMain
+com.xiangteng.xposed.forcewechatdarkmode.HookSelf

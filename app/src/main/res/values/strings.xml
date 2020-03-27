@@ -1,30 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_title">Force WeChat Dark Mode</string>
     <string name="app_xposed_description">Force enable WeChat Dark Mode.</string>
 
-    <string name="toast_storage_permission_denied">Read/write external storage has been denied</string>
-    <string name="storage_permission_rationale">Due to Android system limitation, we need this permission to store configurations.</string>
+    <string name="preference_category_xposed_framework_title">Xposed Framework</string>
+    <string name="preference_xposed_version_title_inactive">Xposed module inactive!</string>
+    <string name="preference_xposed_version_title">Version: %d</string>
+
     <string name="toast_kill_wechat">Force-stop WeChat and restart to apply</string>
     <string name="msg_remind_not_stored">Settings are not saved (click on the floating button at the right bottom corner to save), exit?</string>
 
-    <string name="preference_dark_mode_status_key" translatable="false">preference_dark_mode_status_key</string>
+    <string name="preference_category_dark_mode_title">Dark Mode</string>
+
     <string name="preference_dark_mode_status_title_on">System Dark Mode: On</string>
     <string name="preference_dark_mode_status_title_off">System Dark Mode: Off</string>
     <string name="preference_dark_mode_status_title_unknown">System Dark Mode: Unknown</string>
     <string name="prompt_when_dark_mode_off">Dark Mode not enabled or unsupported. Try \"Enhanced Mode\" if unsupported.</string>
 
-    <string name="preference_switch_enhanced_mode_key" translatable="false">preference_switch_enhanced_mode_key</string>
     <string name="preference_switch_enhanced_mode_title">Enhanced Mode (Experimental)</string>
     <string name="preference_switch_enhanced_mode_summary_on">Always apply Dark Mode, restart WeChat to take effect.</string>
     <string name="preference_switch_enhanced_mode_summary_off">Follow system Dark Mode settings, restart WeChat to take effect.</string>
 
+    <string name="preference_hide_launcher_icon_title">Hide launcher icon</string>
+    <string name="preference_hide_launcher_icon_summary_on">Enter this page through Xposed Installer or Application Detail page</string>
+    <string name="preference_hide_launcher_icon_summary_off">Display icon in launcher</string>
+
     <string name="preference_category_debug_title">Debugging</string>
 
-    <string name="preference_switch_log_to_file_key" translatable="false">preference_switch_log_to_file_key</string>
-    <string name="preference_switch_log_to_file_title">Write logs to file</string>
-    <string name="preference_switch_log_to_file_summary">Debug only, don\'t enable if you\'re unsure.</string>
+    <string name="preference_verbose_logging_title">Verbose logging</string>
+    <string name="preference_verbose_logging_summary">Log more diagnostic messages</string>
 
-    <string name="preference_clear_log_key" translatable="false">preference_clear_log_key</string>
-    <string name="preference_clear_log_title">Clear logs</string>
+    <string name="preference_write_xposed_log_title">Log to Xposed</string>
+    <string name="preference_write_xposed_log_summary_on">Log with XposedBridge.log() (Read them with Xposed Installer)</string>
+    <string name="preference_write_xposed_log_summary_off">Stay silent</string>
+
 </resources>

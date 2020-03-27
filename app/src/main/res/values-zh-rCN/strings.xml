@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_title">强制深色微信</string>
-    <string name="app_xposed_description">强制开启微信深色主题。</string>
 
-    <string name="toast_storage_permission_denied">读写外部存储权限被拒绝</string>
-    <string name="storage_permission_rationale">由于 Android 系统限制，模块需要读写外部存储权限才能读写配置。</string>
+    <string name="app_title">强制深色微信</string>
+    <string name="app_xposed_description">强制开启微信深色主题</string>
+
     <string name="toast_kill_wechat">强行停止微信并重启后生效</string>
     <string name="msg_remind_not_stored">设置尚未保存（点击右下角悬浮按钮保存），确定退出？</string>
+
+    <string name="preference_category_dark_mode_title">深色主题</string>
+
+    <string name="preference_category_xposed_framework_title">Xposed 框架</string>
+    <string name="preference_xposed_version_title_inactive">Xposed 模组未生效！</string>
+    <string name="preference_xposed_version_title">版本：%d</string>
 
     <string name="preference_dark_mode_status_title_on">系统深色主题状态：开</string>
     <string name="preference_dark_mode_status_title_off">系统深色主题状态：关</string>
@@ -17,10 +22,17 @@
     <string name="preference_switch_enhanced_mode_summary_on">总是使用深色模式，重启微信后生效。</string>
     <string name="preference_switch_enhanced_mode_summary_off">跟随系统主题状态，重启微信后生效。</string>
 
+    <string name="preference_hide_launcher_icon_title">隐藏启动器图标</string>
+    <string name="preference_hide_launcher_icon_summary_on">你还是可以从 Xposed Installer 或应用程序资讯页中进入本页</string>
+    <string name="preference_hide_launcher_icon_summary_off">在启动器中显示图标</string>
+
     <string name="preference_category_debug_title">调试信息</string>
 
-    <string name="preference_switch_log_to_file_title">记录日志到文件</string>
-    <string name="preference_switch_log_to_file_summary">仅供调试使用，没事别开。</string>
+    <string name="preference_verbose_logging_title">详细日誌</string>
+    <string name="preference_verbose_logging_summary">记录更详细的除错日誌</string>
 
-    <string name="preference_clear_log_title">清空日志</string>
+    <string name="preference_write_xposed_log_title">使用 Xposed 日誌</string>
+    <string name="preference_write_xposed_log_summary_on">使用 XposedBridge.log() 记录日志（使用 Xposed Installer 读取）</string>
+    <string name="preference_write_xposed_log_summary_off">闭嘴，别吵！</string>
+
 </resources>

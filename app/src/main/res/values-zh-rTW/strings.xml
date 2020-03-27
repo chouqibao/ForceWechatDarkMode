@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_title">強制暗黑微信</string>
     <string name="app_xposed_description">強迫微信使用深色主題。</string>
 
-    <string name="toast_storage_permission_denied">讀寫外部儲存空間被拒絕</string>
-    <string name="storage_permission_rationale">由於 Android 系統限制，此模組必須讀寫外部儲存空間才能存取配置。</string>
+    <string name="preference_category_xposed_framework_title">Xposed 框架</string>
+    <string name="preference_xposed_version_title_inactive">Xposed 模組未生效！</string>
+    <string name="preference_xposed_version_title">版本：%d</string>
+
     <string name="toast_kill_wechat">強制停止微信並重新啟動後生效</string>
     <string name="msg_remind_not_stored">設定尚未保存（點擊右下角浮動按鈕保存），確定要退出嗎？</string>
+
+    <string name="preference_category_dark_mode_title">暗黑模式</string>
 
     <string name="preference_dark_mode_status_title_on">系統深色主題狀態：開</string>
     <string name="preference_dark_mode_status_title_off">系統深色主題狀態：關</string>
@@ -17,10 +22,17 @@
     <string name="preference_switch_enhanced_mode_summary_on">總是使用深色模式，重新啟動微信後生效。</string>
     <string name="preference_switch_enhanced_mode_summary_off">跟隨系統主題狀態，重新啟動微信後生效。</string>
 
+    <string name="preference_hide_launcher_icon_title">隱藏啟動器圖示</string>
+    <string name="preference_hide_launcher_icon_summary_on">您還是可以從 Xposed Installer 或應用程式資訊頁中進入本頁</string>
+    <string name="preference_hide_launcher_icon_summary_off">在啟動器中顯示圖示</string>
+
     <string name="preference_category_debug_title">除錯訊息</string>
 
-    <string name="preference_switch_log_to_file_title">記錄除錯訊息到檔案</string>
-    <string name="preference_switch_log_to_file_summary">除錯專用，沒事別開。</string>
+    <string name="preference_verbose_logging_title">詳細記錄</string>
+    <string name="preference_verbose_logging_summary">記錄更詳細的除錯訊息</string>
 
-    <string name="preference_clear_log_title">清空除錯訊息</string>
+    <string name="preference_write_xposed_log_title">使用 Xposed 記錄</string>
+    <string name="preference_write_xposed_log_summary_on">使用 XposedBridge.log() 記錄除錯訊息（使用 Xposed Installer 讀取）</string>
+    <string name="preference_write_xposed_log_summary_off">閉嘴，別吵！</string>
+
 </resources>
