@@ -19,7 +19,7 @@ public class HookSelf implements IXposedHookLoadPackage {
             return;
 
         MyLog.d(LOG_TAG, "Hooking " + lpparam.packageName + ", ver = " + getXposedVersion());
-        findAndHookMethod(APPLICATION_ID + ".SettingsFragment", lpparam.classLoader, "getActiveXposedVersion", returnConstant(getXposedVersion()));
+        findAndHookMethod(SettingsFragment.class.getName(), lpparam.classLoader, "getActiveXposedVersion", returnConstant(getXposedVersion()));
     }
 
 }
