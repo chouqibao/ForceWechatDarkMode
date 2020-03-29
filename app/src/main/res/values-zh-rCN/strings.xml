@@ -10,7 +10,7 @@
     <string name="preference_category_dark_mode_title">深色主题</string>
 
     <string name="preference_category_xposed_framework_title">Xposed 框架</string>
-    <string name="preference_xposed_version_title_inactive">Xposed 模组未生效！</string>
+    <string name="preference_xposed_version_title_inactive">Xposed 模块未生效！</string>
     <string name="preference_xposed_version_title">版本：%d</string>
 
     <string name="preference_dark_mode_status_title_on">系统深色主题状态：开</string>
@@ -28,10 +28,10 @@
 
     <string name="preference_category_debug_title">调试信息</string>
 
-    <string name="preference_verbose_logging_title">详细日誌</string>
-    <string name="preference_verbose_logging_summary">记录更详细的除错日誌</string>
+    <string name="preference_verbose_logging_title">详细日志</string>
+    <string name="preference_verbose_logging_summary">记录更详细的调试日志</string>
 
-    <string name="preference_write_xposed_log_title">使用 Xposed 日誌</string>
+    <string name="preference_write_xposed_log_title">使用 Xposed 日志</string>
     <string name="preference_write_xposed_log_summary_on">使用 XposedBridge.log() 记录日志（使用 Xposed Installer 读取）</string>
     <string name="preference_write_xposed_log_summary_off">闭嘴，别吵！</string>
 
