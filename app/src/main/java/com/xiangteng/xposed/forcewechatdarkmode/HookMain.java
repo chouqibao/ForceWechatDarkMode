@@ -46,7 +46,7 @@ public class HookMain implements IXposedHookLoadPackage {
 
     @Override
     public void handleLoadPackage(final XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
-        if (!TARGET_PACKAGE_NAME.equals(lpparam.packageName))
+        if (!(TARGET_PACKAGE_NAME.equals(lpparam.packageName) && TARGET_PACKAGE_NAME.equals(lpparam.processName)))
             return;
 
         try {
